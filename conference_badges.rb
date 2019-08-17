@@ -1,3 +1,5 @@
+require 'pry'
+
 def badge_maker(name)
   return "Hello, my name is #{name}."
 end
@@ -5,6 +7,7 @@ end
 def batch_badge_creator(names)
   badges = Array.new
   names.each do |name|
+    binding.pry
     badges << "Hello, my name is #{name}."
   end
   return badges
@@ -24,7 +27,9 @@ def printer(roster)
     roster.each do |name|
       puts "Hello, my name is #{name}."
     end
+    binding.pry
     counter = 1
+    assign_rooms(roster)
     roster.each do |name|
       puts "Hello, #{name}! You'll be assigned to room #{counter}!"
       counter += 1
